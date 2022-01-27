@@ -1,5 +1,7 @@
-# chisel-empty
+# Conway's Game of Life
 
-An almost empty chisel project as a starting point for hardware design.
+Implementing [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+in Software and Hardware.
 
-See the `Makefile` for the hardware and test targets.
+The Game of Life (GoL) is an extremely easy problem to parallelize.
+We aim to beat a standard laptop with a cheap FPGA board.
