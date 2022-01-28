@@ -34,3 +34,7 @@ class Cell extends Module {
     io.out := regCell
 //  }
 }
+
+object Cell extends App {
+  println(getVerilogString(new Cell()))
+}
