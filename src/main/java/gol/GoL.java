@@ -5,8 +5,8 @@ package gol;
  */
 public class GoL {
 
-    int[][] current;
-    int[][] next;
+    private int[][] current;
+    private int[][] next;
 
     /**
      * Start a GoL scene.
@@ -15,12 +15,13 @@ public class GoL {
      * The boarders of the array shall be empty and boarders are ignored to simplify the computation.
      */
     public GoL(int start[][]) {
+        // TODO: use an extension for the optimization and have a apply method
         current = start;
         next = new int[current.length][current.length];
     }
 
-    int[][] getState() {
-        return current;
+    public int getVal(int x, int y) {
+        return current[x][y];
     }
 
     void step() {

@@ -2,10 +2,10 @@ package gol;
 
 public class HelloGoL {
 
-    static void printState(int[][] state) {
-        for (int i = 0; i < state.length; ++i) {
-            for (int j = 0; j < state[0].length; ++j) {
-                System.out.print(state[i][j]+ " ");
+    static void printState(GoL g, int dim) {
+        for (int i = 0; i < dim; ++i) {
+            for (int j = 0; j < dim; ++j) {
+                System.out.print(g.getVal(i, j) + " ");
             }
             System.out.println();
         }
@@ -20,13 +20,13 @@ public class HelloGoL {
                 {0, 0, 0, 0, 0},
         };
         GoL gol = new GoL(start);
-        printState(gol.current);
+        printState(gol, 5);
         gol.step();
-        printState(gol.current);
+        printState(gol, 5);
         gol.step();
-        printState(gol.current);
+        printState(gol, 5);
         gol.step();
-        printState(gol.current);
+        printState(gol, 5);
 
     }
 }
