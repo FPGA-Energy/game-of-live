@@ -15,13 +15,21 @@ public class GoL {
      * The boarders of the array shall be empty and boarders are ignored to simplify the computation.
      */
     public GoL(int start[][]) {
-        // TODO: use an extension for the optimization and have a apply method
-        current = start;
+        // assert (true, "TODO: check that dimensions are the same")
+        current = new int[start.length + 2][start.length + 2];
+        for (int y=0; y < start.length; ++y) {
+            for (int x = 0; x < start.length; ++x) {
+                current[y+1][x+1] = start[y][x];
+            }
+        }
         next = new int[current.length][current.length];
     }
 
+    public int getDim() {
+        return current.length - 2;
+    }
     public int getVal(int x, int y) {
-        return current[x][y];
+        return current[x+1][y+1];
     }
 
     void step() {
