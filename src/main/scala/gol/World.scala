@@ -28,7 +28,7 @@ class World(start: Array[Array[Int]]) extends Module {
       val south = y == n-1
       val west = x == 0
       val east = x == n-1
-      println(s"x: $x y: $y $north $south $west $east")
+      // println(s"x: $x y: $y $north $south $west $east")
       val in = world(y)(x).io.in
       in(0) := (if (north) false.B else world(y-1)(x).io.out)
       in(1) := (if (north || east) false.B else world(y-1)(x+1).io.out)
