@@ -15,10 +15,8 @@ class Cell(init: Boolean) extends Module {
   val regCell = RegInit(init.B)
   val cnt = PopCount(io.in)
 
-  when(regCell) {
-    when(cnt === 2.U || cnt === 3.U) {
+  when(regCell && cnt === 2.U || cnt === 3.U) {
       regCell := true.B
-    }
   }.elsewhen(cnt === 3.U) {
     regCell := true.B
   }.otherwise {

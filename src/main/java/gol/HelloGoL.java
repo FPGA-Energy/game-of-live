@@ -26,6 +26,5 @@ public class HelloGoL {
         printState(gol);
         gol.step();
         printState(gol);
-
     }
 }

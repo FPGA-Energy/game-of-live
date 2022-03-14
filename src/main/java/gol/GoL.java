@@ -11,11 +11,11 @@ public class GoL {
     /**
      * Start a GoL scene.
      *
-     * The board is assumed to be quadratic. No cells on the boarders.
-     * The boarders of the array shall be empty and boarders are ignored to simplify the computation.
+     * The board is assumed to be quadratic. No cells on the boarders (copy to a larger board for this).
+     * The boarders of the array are generated to be empty and boarders are ignored to simplify the computation.
      */
     public GoL(int start[][]) {
-        // assert (true, "TODO: check that dimensions are the same")
+        // assert (true, "TODO: check that dimensions are the same, or remove that restriction")
         current = new int[start.length + 2][start.length + 2];
         for (int y=0; y < start.length; ++y) {
             for (int x = 0; x < start.length; ++x) {
@@ -28,8 +28,8 @@ public class GoL {
     public int getDim() {
         return current.length - 2;
     }
-    public int getVal(int x, int y) {
-        return current[x+1][y+1];
+    public int getVal(int y, int x) {
+        return current[y+1][x+1];
     }
 
     void step() {
@@ -53,6 +53,7 @@ public class GoL {
                 }
             }
         }
+        // Exchange the two arrays, no need to do some allocation here
         // save current
         int[][] saved = current;
         // move next to current
