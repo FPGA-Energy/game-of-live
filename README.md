@@ -18,3 +18,26 @@ We aim to beat a standard laptop with a cheap FPGA board.
  * SW implementation can extend it with border columns and lines to optimzed
  * HW can have default connections for the optimization
  * Provide an apply(x, y) method to read back the current value
+
+## Running
+
+As this is a ```sbt``` based project, you can run applications with:
+
+```
+sbt run
+```
+
+and then select between generation of Verilog code (```GoLTop``` and ```Cell```),
+a simple example (```HelloGoL```), and testing the performance of a software
+implementation in Java (```RunSW```).
+
+The folder quartus contains a Quartus project to synthesize the GoL for a Cyclone IV FPGA.
+
+## Testing
+
+The project contains also a few tests. A Simple test and a cosimulation between the
+software (Java) and hardware (Chisel) implementation. Run the tests with:
+
+```
+sbt test
+```

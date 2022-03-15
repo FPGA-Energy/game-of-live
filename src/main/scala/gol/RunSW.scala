@@ -11,5 +11,5 @@ object RunSW extends App {
     gol.step()
   }
   val time = System.currentTimeMillis() - executionStart
-  println(s"$n x $n world, $iter iteration, execution time: $time ms")
+  println(s"$n x $n world, $iter iterations, execution time: $time ms")
 }
