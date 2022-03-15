@@ -41,7 +41,3 @@ class World(start: Array[Array[Int]]) extends Module {
     }
   }
 }
-
-//object World extends App {
-//  emitVerilog(new World(4))
-//}

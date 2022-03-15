@@ -7,11 +7,8 @@
 
 package gol
 
-import chisel3._
 import chiseltest._
 import org.scalatest.flatspec.AnyFlatSpec
-
-import scala.util.Random
 
 class GoLTest extends AnyFlatSpec with ChiselScalatestTester {
 
@@ -42,15 +39,7 @@ class GoLTest extends AnyFlatSpec with ChiselScalatestTester {
 
   "GoL" should "cosimulate" in {
 
-    val n = 10
-    val start = Array.ofDim[Int](n, n)
-    val r = new Random()
-    for (y <- 0 until n) {
-      for (x <- 0 until n) {
-        start(y)(x) = if (r.nextBoolean()) 1 else 0
-      }
-    }
-
+    val start = Util.getRandomWorld(10)
     val gol = new GoL(start)
 
     test(new World(start)) { dut =>
@@ -69,8 +58,6 @@ class GoLTest extends AnyFlatSpec with ChiselScalatestTester {
         gol.step()
         // println()
       }
-
-
     }
   }
 }
