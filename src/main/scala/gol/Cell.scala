@@ -17,9 +17,9 @@ class Cell(init: Boolean) extends Module {
 
   when(regCell && cnt === 2.U || cnt === 3.U) {
       regCell := true.B
-  }.elsewhen(cnt === 3.U) {
+  } .elsewhen(cnt === 3.U) {
     regCell := true.B
-  }.otherwise {
+  } .otherwise {
     regCell := false.B
   }
 
