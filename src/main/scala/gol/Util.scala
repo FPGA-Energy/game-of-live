@@ -1,5 +1,6 @@
 package gol
 
+import scala.io.Source
 import scala.util.Random
 
 object Util {
@@ -12,5 +13,23 @@ object Util {
       }
     }
     start
+  }
+
+  def worldFromFile(name: String): (Int, Array[Array[Int]]) = {
+
+    val input = Source
+      .fromFile(name)
+      .getLines()
+      .toSeq
+      .head
+      .split(" ")
+
+    val n = input.head.toInt
+
+    n -> input
+      .drop(2)
+      .map(_.toInt)
+      .grouped(n)
+      .toArray
   }
 }

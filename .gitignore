@@ -1,0 +1,12 @@
+/.bsp
+/.idea
+/build
+/project
+/target
+/test_run_dir
+/**/*.cache
+/**/*.hw
+/**/*.ip_user_files
+/**/*.runs
+/**/*.sim
+/generated
